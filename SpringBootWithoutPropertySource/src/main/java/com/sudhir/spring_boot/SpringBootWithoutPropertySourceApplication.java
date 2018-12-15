@@ -12,6 +12,11 @@ public class SpringBootWithoutPropertySourceApplication {
 			
 		DataSourceFactory dataSourceFactory = container.getBean(DataSourceFactory.class);
 		System.out.println(dataSourceFactory);
+		System.out.println("Number of Beans in Spring Boot = "+container.getBeanDefinitionCount());
+		String[] beanDefinitionNames = container.getBeanDefinitionNames();
+		for (String beanName : beanDefinitionNames) {
+			System.out.println("Bean Name = "+beanName);
+		}
 	}
 
 }
